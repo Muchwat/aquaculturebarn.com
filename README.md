@@ -17,7 +17,7 @@ sudo php artisan cache:clear && sudo php artisan route:clear && sudo php artisan
 ```
 
 ```bash
-sudo chmod -R 775 /etc/tgw/storage/ &&  sudo chmod -R 775 /etc/tgw/public/ && sudo chmod -R 775 /etc/tgw/bootstrap/cache && sudo chown -R www-data:www-data /etc/tgw/public/ && sudo chown -R www-data:www-data /etc/tgw/storage/ && sudo chown -R www-data:www-data /etc/tgw
+sudo chmod -R 775 /etc/aqbn/storage/ &&  sudo chmod -R 775 /etc/aqbn/public/ && sudo chmod -R 775 /etc/aqbn/bootstrap/cache && sudo chown -R www-data:www-data /etc/aqbn/public/ && sudo chown -R www-data:www-data /etc/aqbn/storage/ && sudo chown -R www-data:www-data /etc/aqbn
 ```
 
 ```bash
@@ -26,7 +26,7 @@ sudo php artisan config:cache && sudo php artisan route:cache && sudo php artisa
 
 Unlink storage symbolic link between public and storage by deleting folder
 ```bash
-rm -rf /etc/tgw/public/storage
+rm -rf /etc/aqbn/public/storage
 ```
 
 Set symbolic link between public and storage
@@ -44,11 +44,11 @@ Set up Supervisor
 ```bash
 [program:vmms-email]
 process_name=%(program_name)s_%(process_num)02d
-command=php /etc/tgw/artisan queue:work --tries=3
+command=php /etc/aqbn/artisan queue:work --tries=3
 autostart=true
 autorestart=true
 user=root
 numprocs=2
 redirect_stderr=true
-stdout_logfile=/etc/tgw/storage/logs/supervisord.log
+stdout_logfile=/etc/aqbn/storage/logs/supervisord.log
 ```
