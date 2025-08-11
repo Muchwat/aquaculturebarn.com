@@ -40,13 +40,15 @@
                         </div>
                         <div class="col-12">
                             <div class="form-floating">
-                                <input name="subject" type="text" class="form-control" id="form-floating-3" placeholder="{{ __('contact.subject') }}">
+                                <input name="subject" type="text" class="form-control" id="form-floating-3"
+                                    placeholder="{{ __('contact.subject') }}">
                                 <label for="form-floating-3">{{ __('contact.subject') }}</label>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-floating">
-                                <textarea name="content" class="form-control" placeholder="{{ __('contact.message') }}" id="form-floating-4" style="height: 150px"></textarea>
+                                <textarea name="content" class="form-control" placeholder="{{ __('contact.message') }}"
+                                    id="form-floating-4" style="height: 150px"></textarea>
                                 <label for="form-floating-4">{{ __('contact.message') }}</label>
                             </div>
                         </div>
@@ -59,7 +61,7 @@
             <div class="col-lg-6" style="min-height: 400px;">
                 <div class="position-relative h-100">
                     <iframe class="position-relative w-100 h-100"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127641.17044270078!2d36.764995805983!3d-1.3030359783408325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1172d84d49a7%3A0xf7cf0254b297924c!2sNairobi!5e0!3m2!1sen!2ske!4v1706258463148!5m2!1sen!2ske"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8810.836223202818!2d34.778986!3d-0.096773!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182aa3e10f705dab%3A0xf97ea03346a2db8!2sAquaculture%20Barn%20Limited!5e1!3m2!1sen!2ske!4v1754922134531!5m2!1sen!2ske"
                         frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                 </div>
             </div>
