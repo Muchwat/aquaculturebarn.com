@@ -154,7 +154,7 @@
         @if(isset($partners) && $partners->count() > 0)
             <div class="row g-4 justify-content-center">
                 @foreach($partners as $partner)
-                    <div class="col-lg-3 col-md-3 col-6 d-flex align-items-stretch">
+                    <div class="col-lg-3 col-md-3  col-sm-12 col-12 d-flex align-items-stretch">
                         @if($partner->website_url)
                             <a href="{{ $partner->website_url }}" target="_blank" rel="noopener noreferrer"
                                 class="partner-logo-item w-100 d-flex align-items-center justify-content-center"
