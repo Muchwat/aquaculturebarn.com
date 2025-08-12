@@ -3,6 +3,7 @@
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WorkRecordController;
+use App\Models\Partner;
 use App\Models\Team;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
@@ -29,10 +30,12 @@ Route::get('/', [HomeController::class, 'show'])->name('home');
 Route::get('/about', function () {
     // Fetch all team members from the database
     $teamMembers = Team::all();
+    $partners = Partner::all();
 
     // Return the view and pass the team members data to it
     return view('about', [
         'teamMembers' => $teamMembers,
+        'partners' => $partners,
     ]);
 });
 
