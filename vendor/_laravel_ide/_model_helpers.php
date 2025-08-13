@@ -1668,12 +1668,14 @@ namespace App\Models {
      *
      * @property \Illuminate\Support\Carbon|null $updated_at
      * @property \Illuminate\Support\Carbon|null $created_at
+     * @property mixed $website_url
      * @property mixed $logo
      * @property mixed $name
      * @property int $id
      * @method static \Illuminate\Database\Eloquent\Builder<Partner>|Partner whereId($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Partner>|Partner whereName($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Partner>|Partner whereLogo($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Partner>|Partner whereWebsiteUrl($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Partner>|Partner whereCreatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Partner>|Partner whereUpdatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Partner>|Partner newModelQuery()
