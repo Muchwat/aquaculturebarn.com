@@ -23,5 +23,4 @@ return [
     'no_recent_products' => 'No recent products available.',
     'no_images_available' => 'No images available for this product.', // Added
     'description_heading' => 'Product Description', // Added
-
 ];

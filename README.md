@@ -1,32 +1,15 @@
 # Deploy Project
 
 ```bash
-sudo composer clearcache && sudo rm -rf vendor &&  sudo composer install
+sudo composer clearcache && sudo rm -rf vendor &&  sudo composer install --ignore-platform-reqs  &&  sudo composer upgrade && sudo composer install --optimize-autoloader --no-dev && composer dump-autoload -o
 ```
 
 ```bash
-sudo composer install --ignore-platform-reqs
+php artisan optimize:clear
 ```
 
 ```bash
-sudo composer install --optimize-autoloader --no-dev
-```
-
-```bash
-sudo php artisan cache:clear && sudo php artisan route:clear && sudo php artisan config:clear && sudo php artisan view:clear
-```
-
-```bash
-sudo chmod -R 775 /etc/aqbn/storage/ &&  sudo chmod -R 775 /etc/aqbn/public/ && sudo chmod -R 775 /etc/aqbn/bootstrap/cache && sudo chown -R www-data:www-data /etc/aqbn/public/ && sudo chown -R www-data:www-data /etc/aqbn/storage/ && sudo chown -R www-data:www-data /etc/aqbn
-```
-
-```bash
-sudo php artisan config:cache && sudo php artisan route:cache && sudo php artisan view:cache
-```
-
-Unlink storage symbolic link between public and storage by deleting folder
-```bash
-rm -rf /etc/aqbn/public/storage
+sudo npm run build
 ```
 
 Set symbolic link between public and storage
@@ -34,21 +17,74 @@ Set symbolic link between public and storage
 sudo php artisan storage:link
 ```
 
-Build Assets
 ```bash
-sudo npm run build
+sudo chmod -R 775 /etc/aqbn/storage/ &&  sudo chmod -R 775 /etc/aqbn/public/ && sudo chmod -R 775 /etc/aqbn/bootstrap/cache && sudo chown -R www-data:www-data /etc/aqbn/public/ && sudo chown -R www-data:www-data /etc/aqbn/storage/ && sudo chown -R www-data:www-data /etc/aqbn
 ```
 
-Set up Supervisor
+```bash
+php artisan optimize
+```
+
+Image max upload:
+
+#### Tweak the PHP fpm config file:
+
+php.ini
+
+; Maximum allowed size for uploaded files.
+```bash
+upload_max_filesize = 40M
+```
+
+; Must be greater than or equal to upload_max_filesize
 
 ```bash
-[program:vmms-email]
+post_max_size = 40M
+```
+
+#### Publish the Livewire config
+
+```bash
+php artisan livewire:publish --config
+```
+
+In ```config/livewire.php```, modify the validation rules for temporary file uploads:
+```bash
+'temporary_file_upload' => [
+    ...
+    'rules' => 'file|max:102400',
+],
+```
+
+#### Finally modify nginx config file:
+
+```bash
+server {
+    client_max_body_size 64M;
+    // ...
+}
+```
+
+If it does not work try:
+
+```bash
+FileUpload::make('image')
+        ->maxSize(102400)
+        ->label('Featured Image')
+        ->image()
+```
+
+
+Set up Supervisor:
+
+```bash
+[program:aqbn-queue]
 process_name=%(program_name)s_%(process_num)02d
 command=php /etc/aqbn/artisan queue:work --tries=3
 autostart=true
 autorestart=true
-user=root
+user=www-data
 numprocs=2
 redirect_stderr=true
-stdout_logfile=/etc/aqbn/storage/logs/supervisord.log
+stdout_logfile=/etc/aqbn/storage/logs/worker.log
 ```
