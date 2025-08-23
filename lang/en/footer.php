@@ -21,5 +21,5 @@ return [
     'contact' => 'Contact Us',
     'services' => 'Our Services',
     'articles' => 'Articles',
-    'rights_reserved' => '&copy; <a class="text-secondary border-bottom" href="https://www.aquaculturebarn.co.ke/">aquaculturebarn.co.ke</a>. All Rights Reserved. Designed by <a class="text-secondary border-bottom" href="https://moktech.africa">Moktech Africa Ltd</a>',
+    'rights_reserved' => '&copy; <a class="text-secondary border-bottom" href="https://www.aquaculturebarn.com/">Aquaculture Barn Limited</a>. All Rights Reserved. Designed by <a class="text-secondary border-bottom" href="https://moktech.africa">Moktech Africa Ltd</a>',
 ];
