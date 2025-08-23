@@ -29,7 +29,7 @@ return [
     'answer_8' => 'We design and support various systems including earthen ponds, cage systems for lakes and dams, concrete tanks, and recirculating aquaculture systems (RAS) for intensive indoor farming.',
 
     'question_9' => 'How can I contact Aquaculture Barn Limited?',
-    'answer_9' => 'You can contact us via our <a href="{{ url(\'/contact\') }}">contact page</a> or send an email to <a href="mailto:info@aquaculturebarn.com">info@aquaculturebarn.com</a>. You can also call or WhatsApp us at +254 7XX XXX XXX.',
+    'answer_9' => 'You can contact us via our <a href="{{ url(\'/contact\') }}">contact page</a> or send an email to <a href="mailto:mail@aquaculturebarn.com">mail@aquaculturebarn.com</a>. You can also call or WhatsApp us at +254(0) 792 871 898.',
 
     'question_10' => 'How can I request a quote for your services?',
     'answer_10' => 'Please visit our <a href="{{ url(\'/services\') }}">Services page</a> and fill out the quotation request form. Provide details about your project, and our team will reach out with a customized proposal.',

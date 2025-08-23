@@ -37,16 +37,14 @@ class NewsResource extends Resource
 
                 Section::make('Meta')->schema([
                     FileUpload::make('thumbnail')
-                    ->image()
-                    ->imageResizeMode('cover')
-                    ->imageCropAspectRatio('16:9')
-                    ->imageResizeTargetWidth('1280')
-                    ->imageResizeTargetHeight('720')
-                    ->disk('public')
-                    ->directory('thumbnails')
-                    ->required(),
-                    // Select::make('category_id')->label('Category')->searchable()->options(Category::all()->pluck('name', 'id'))->required(),
-                    // Select::make('tags')->multiple()->searchable()->options(Tag::all()->pluck('name', 'id')->toArray())->required(),
+                        ->image()
+                        ->imageResizeMode('cover')
+                        ->imageCropAspectRatio('16:9')
+                        ->imageResizeTargetWidth('1280')
+                        ->imageResizeTargetHeight('720')
+                        ->disk('public')
+                        ->directory('thumbnails')
+                        ->required(),
                     Checkbox::make('published')->label('Publish')->default(true),
                 ])->columnSpan(3),
 
@@ -59,16 +57,16 @@ class NewsResource extends Resource
             ->columns([
                 ImageColumn::make('thumbnail'),
                 TextColumn::make('title')->limit(30)
-                ->tooltip(function (TextColumn $column): ?string {
-                    $state = $column->getState();
-             
-                    if (strlen($state) <= $column->getCharacterLimit()) {
-                        return null;
-                    }
-             
-                    // Only render the tooltip if the column content exceeds the length limit.
-                    return $state;
-                }),
+                    ->tooltip(function (TextColumn $column): ?string {
+                        $state = $column->getState();
+
+                        if (strlen($state) <= $column->getCharacterLimit()) {
+                            return null;
+                        }
+
+                        // Only render the tooltip if the column content exceeds the length limit.
+                        return $state;
+                    }),
                 TextColumn::make('author'),
                 CheckboxColumn::make('published'),
             ])->defaultSort('created_at', 'desc')
