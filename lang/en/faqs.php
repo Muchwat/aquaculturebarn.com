@@ -11,7 +11,7 @@ return [
     'answer_2' => 'We offer a comprehensive range of aquaculture services including pond construction, cage farming systems, recirculating aquaculture systems (RAS), hatchery management, extension services, training, and supply of fingerlings and feeds.',
 
     'question_3' => 'Do you supply fish fingerlings and feeds?',
-    'answer_3' => 'Yes, we supply high-quality fingerlings for species such as tilapia and catfish. We also provide nutritionally balanced fish feeds for all growth stages, sourced from trusted local and international suppliers.',
+    'answer_3' => 'Yes, we supply high-quality fingerlings for species such as tilapia, catfish and many others. We also provide nutritionally balanced fish feeds for all growth stages, sourced from trusted local and international suppliers.',
 
     'question_4' => 'Can you help set up a fish farm from scratch?',
     'answer_4' => 'Absolutely. We offer turnkey solutions for fish farm setup — from site assessment and design, to construction, stocking, training, and ongoing technical support.',
@@ -29,8 +29,8 @@ return [
     'answer_8' => 'We design and support various systems including earthen ponds, cage systems for lakes and dams, concrete tanks, and recirculating aquaculture systems (RAS) for intensive indoor farming.',
 
     'question_9' => 'How can I contact Aquaculture Barn Limited?',
-    'answer_9' => 'You can contact us via our <a href="{{ url(\'/contact\') }}">contact page</a> or send an email to <a href="mailto:mail@aquaculturebarn.com">mail@aquaculturebarn.com</a>. You can also call or WhatsApp us at +254(0) 792 871 898.',
+    'answer_9' => 'You can contact us via our <a href="/contact">contact page</a> or send an email to <a href="mailto:mail@aquaculturebarn.com">mail@aquaculturebarn.com</a>. You can also call or WhatsApp us at +254(0) 792 871 898.',
 
     'question_10' => 'How can I request a quote for your services?',
-    'answer_10' => 'Please visit our <a href="{{ url(\'/services\') }}">Services page</a> and fill out the quotation request form. Provide details about your project, and our team will reach out with a customized proposal.',
+    'answer_10' => 'Please visit our <a href="/services">Services page</a> and fill out the quotation request form. Provide details about your project, and our team will reach out with a customized proposal.',
 ];
